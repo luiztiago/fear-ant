@@ -1,6 +1,7 @@
 var App = (function () {
 
 	return {
+		interval: null,
 		setup: function(){
 			var _self = this;
 			document.querySelector('form').addEventListener('submit', function(e){
@@ -8,11 +9,15 @@ var App = (function () {
 				_self.Ants.generate();
 			});
 
-			setInterval(_self.Ants.animate, 2000);
+			// event handler event type
+			window.addEventListener('devicelight', function(event) {
+				_self.Light.handler(event.value);
+			})
 		},
 		Ants: {
 			generate: function(){
-				var length = parseInt(document.querySelector('input').value, 10),
+				var _self = this,
+					length = parseInt(document.querySelector('input').value, 10),
 					t = document.querySelector('#ant'),
 					newAnt,
 					randomScale,
@@ -29,12 +34,13 @@ var App = (function () {
 					newAnt = t.content.querySelector('.ant');
 
 					newAnt.style.top = '10px';
-					newAnt.style.webkitTransform = 'scale('+randomScale+','+randomScale+') rotate('+randomRotate+'deg)';
+					newAnt.style.mozTransform = 'scale('+randomScale+','+randomScale+') rotate('+randomRotate+'deg)';
 					newAnt.style.left = randomX + "%";
 					newAnt.style.top = randomY + "%";
 
 					document.body.appendChild(t.content.cloneNode(true));
 				}
+				_self.interval = setInterval(App.Ants.animate, 2000);
 			},
 			animate: function(){
 				var randomX,
@@ -48,6 +54,15 @@ var App = (function () {
 					ant = ants[i];
 					ant.style.left = randomX + "px";
 					ant.style.top = randomY + "px";
+				}
+			}
+		},
+		Light: {
+			handler: function(value){
+				if(value < 10) {
+					document.querySelector('body').className = 'night';
+				}else{
+					document.querySelector('body').className = '';
 				}
 			}
 		}
