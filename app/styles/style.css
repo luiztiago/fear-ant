@@ -3,17 +3,24 @@
 	padding: 0;
 }
 
+body,html {
+	width: 100%;
+	height: 100%;
+	border: 5px solid #ccc;
+	box-sizing: border-box;
+}
+
 div {
 	background: #000;
 }
 
 .ant {
-	top: 40%;
-	left: 40%;
 	width: 170px;
 	height: 100px;
-	position: relative;
+	position: absolute;
 	background-color: transparent;
+	-webkit-transform-origin: center center;
+	transition: all 5s ease-in-out;
 }
 
 .aerial {
@@ -599,4 +606,19 @@ div {
 	100% {
 		-webkit-transform: rotate(-20deg);
 	}
+}
+
+form {
+	position: absolute;
+	top: 0;
+	right: 0
+}
+
+form input[type=text] {
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	line-height: 18px;
+	font-size: 18px;
+	padding: 10px;
 }
