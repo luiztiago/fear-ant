@@ -19,7 +19,7 @@ div {
 }
 
 .aerial {
-	top: 5px;
+	top: 45px;
 	left: 48px;
 	position: absolute;
 	animation: linear aerial 1s infinite;
@@ -30,9 +30,9 @@ div {
 
 .aerial .left {
 	width: 2px;
-	height: 25px;
-	top: 15px;
-	left: 0px;
+	height: 105px;
+	top: -115px;
+	left: 300px;
 	position: absolute;
 	transform: rotate(-35deg);
 	transform-origin: bottom left;
@@ -42,8 +42,8 @@ div {
 
 .aerial .left .arm {
 	width: 2px;
-	height: 25px;
-	margin-top: -25px;
+	height: 105px;
+	margin-top: -105px;
 	transform: rotate(-20deg);
 	transform-origin: bottom left;
 	-webkit-transform: rotate(-20deg);
@@ -78,7 +78,7 @@ div {
 	height: 20px;
 	position: absolute;
 	left: 45px;
-	top: 40px;
+	top: 140px;
 	border-radius: 15px 10px 10px 15px / 8px 10px 10px 8px;
 }
 
@@ -87,7 +87,7 @@ div {
 	height: 26px;
 	background: black;
 	position: absolute;
-	left: 70px;
+	left: 270px;
 	top: 37px;
 	border-radius: 20px / 10px;
 }
@@ -99,7 +99,7 @@ div {
 	height: 36px;
 	background: black;
 	position: absolute;
-	left: 30px;
+	left: -300px;
 	top: -5px;
 	border-radius: 20px 50% 50% 20px / 10px 50% 50% 10px;
 }
@@ -112,8 +112,8 @@ div {
 
 .paw .left {
 	width: 2px;
-	height: 25px;
-	top: 15px;
+	height: 75px;
+	top:-55px;
 	left: 0px;
 	position: absolute;
 	transform: rotate(15deg);
@@ -140,7 +140,7 @@ div {
 	width: 2px;
 	height: 25px;
 	top: 45px;
-	left: 0px;
+	left: 200px;
 	position: absolute;
 	transform: rotate(-15deg);
 	transform-origin: top left;
@@ -163,7 +163,7 @@ div {
 }
 
 .paw1 .left {
-	left: 20px;
+	left: 120px;
 	animation: paw1-left linear 0.8s infinite;
 	-webkit-animation: paw1-left linear 0.8s infinite;
 }
@@ -180,7 +180,7 @@ div {
 }
 
 .paw1 .right {
-	left: 20px;
+	left: 80px;
 	animation: paw1-right linear 0.8s infinite;
 	-webkit-animation: paw1-right linear 0.8s infinite;
 }
@@ -249,28 +249,28 @@ div {
 
 @keyframes aerial {
 	0% {
-		transform: rotateY(-35deg);
+		transform: rotateY(335deg);
 	}
 	50% {
-		transform: rotateY(35deg);
+		transform: rotateY(-335deg);
 	}
 	100% {
-		transform: rotateY(-35deg);
+		transform: rotateY(335deg);
 	}
 }
 
 @keyframes paw-left {
 	00% {
-		transform: rotate(-15deg);
+		transform: rotateY(315deg);
 	}
 	20% {
-		transform: rotate(-15deg);
+		transform: rotateX(315deg);
 	}
 	40% {
-		transform: rotate(15deg);
+		transform: rotate(-315deg);
 	}
 	100% {
-		transform: rotate(-15deg);
+		transform: rotateZ(315deg);
 	}
 }
 
