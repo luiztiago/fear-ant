@@ -15,6 +15,7 @@ div {
 	position: absolute;
 	background-color: transparent;
 	transform: scale(3);
+	-webkit-transform: scale(3);
 }
 
 .aerial {
@@ -459,7 +460,7 @@ div {
 		-webkit-transform: rotate(20deg);
 	}
 	50% {
-		-webkit-transform: rotate(50deg);
+		-webkit-transform: rotate(-260deg);
 	}
 	100% {
 		-webkit-transform: rotate(20deg);
@@ -486,7 +487,7 @@ div {
 		-webkit-transform: rotate(-20deg);
 	}
 	50% {
-		-webkit-transform: rotate(-50deg);
+		-webkit-transform: rotate(260deg);
 	}
 	100% {
 		-webkit-transform: rotate(-20deg);
@@ -568,7 +569,7 @@ div {
 		-webkit-transform: rotate(20deg);
 	}
 	50% {
-		-webkit-transform: rotate(50deg);
+		-webkit-transform: rotate(-20deg);
 	}
 	100% {
 		-webkit-transform: rotate(20deg);
@@ -595,7 +596,7 @@ div {
 		-webkit-transform: rotate(-20deg);
 	}
 	50% {
-		-webkit-transform: rotate(-60deg);
+		-webkit-transform: rotate(40deg);
 	}
 	100% {
 		-webkit-transform: rotate(-20deg);
