@@ -8,12 +8,13 @@ div {
 }
 
 .ant {
-	top: 40%;
+	top: 45%;
 	left: 40%;
 	width: 170px;
 	height: 100px;
-	position: relative;
+	position: absolute;
 	background-color: transparent;
+	transform: scale(3);
 }
 
 .aerial {
@@ -277,7 +278,7 @@ div {
 		transform: rotate(20deg);
 	}
 	50% {
-		transform: rotate(50deg);
+		transform: rotate(250deg);
 	}
 	100% {
 		transform: rotate(20deg);
@@ -301,13 +302,13 @@ div {
 
 @keyframes paw-right-arm {
 	0% {
-		transform: rotate(-20deg);
+		transform: rotateX(-20deg);
 	}
 	50% {
-		transform: rotate(-50deg);
+		transform: rotateX(-250deg);
 	}
 	100% {
-		transform: rotate(-20deg);
+		transform: rotateX(-20deg);
 	}
 }
 
@@ -328,13 +329,13 @@ div {
 
 @keyframes paw1-left-arm {
 	0% {
-		transform: rotate(20deg);
+		transform: rotateZ(20deg);
 	}
 	50% {
-		transform: rotate(50deg);
+		transform: rotateZ(250deg);
 	}
 	100% {
-		transform: rotate(20deg);
+		transform: rotateZ(20deg);
 	}
 }
 
@@ -386,7 +387,7 @@ div {
 		transform: rotate(20deg);
 	}
 	50% {
-		transform: rotate(50deg);
+		transform: rotate(150deg);
 	}
 	100% {
 		transform: rotate(20deg);
@@ -398,7 +399,7 @@ div {
 		transform: rotate(-5deg);
 	}
 	50% {
-		transform: rotate(-5deg);
+		transform: rotate(-35deg);
 	}
 	80% {
 		transform: rotate(-40deg);
@@ -410,7 +411,7 @@ div {
 
 @keyframes paw2-right-arm {
 	0% {
-		transform: rotate(-20deg);
+		transform: rotate(60deg);
 	}
 	50% {
 		transform: rotate(-60deg);
