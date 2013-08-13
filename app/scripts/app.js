@@ -39,13 +39,23 @@ var App = (function () {
 			animate: function(){
 				var randomX,
 					randomY,
+					deltaX,
+					deltaY,
 					ants = document.querySelectorAll('.ant'),
 					ant;
 
 				for(i in ants) {
+					ant = ants[i];
+
 					randomX = Math.floor(Math.random() * window.innerWidth);
 					randomY = Math.floor(Math.random() * window.innerHeight);
-					ant = ants[i];
+
+					deltaY = randomY - ant.style.top.replace('px','');
+					deltaX = randomX - ant.style.left.replace('px','');
+					angleInDegrees = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
+					angleInDegrees = angleInDegrees - 180;
+					ant.style.webkitTransform = 'rotate('+angleInDegrees+'deg)';
+
 					ant.style.left = randomX + "px";
 					ant.style.top = randomY + "px";
 				}
