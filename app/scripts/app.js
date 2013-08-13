@@ -1,18 +1,24 @@
 var App = (function () {
 
 	return {
+		interval: null,
 		setup: function(){
 			var _self = this;
 			document.querySelector('form').addEventListener('submit', function(e){
 				e.preventDefault();
-				_self.Ants.generate();
+				_self.Ants.generate(parseInt(document.querySelector('input').value, 10));
 			});
 
-			setInterval(_self.Ants.animate, 2000);
+			// event handler event type
+			window.addEventListener('devicelight', function(event) {
+				_self.Light.handler(event.value);
+			})
+
+			_self.Ants.generate(1);
 		},
 		Ants: {
-			generate: function(){
-				var length = parseInt(document.querySelector('input').value, 10),
+			generate: function(length){
+				var _self = this,
 					t = document.querySelector('#ant'),
 					newAnt,
 					randomScale,
@@ -29,7 +35,7 @@ var App = (function () {
 					newAnt = t.content.querySelector('.ant');
 
 					newAnt.style.top = '10px';
-					newAnt.style.webkitTransform = 'scale('+randomScale+','+randomScale+') rotate('+randomRotate+'deg)';
+					newAnt.style.MozTransform = 'scale('+randomScale+','+randomScale+') rotate('+randomRotate+'deg)';
 					newAnt.style.left = randomX + "%";
 					newAnt.style.top = randomY + "%";
 
@@ -58,6 +64,18 @@ var App = (function () {
 
 					ant.style.left = randomX + "px";
 					ant.style.top = randomY + "px";
+				}
+			}
+		},
+		Light: {
+			handler: function(value){
+				if(value < 10) {
+					document.querySelector('body').className = 'night';
+					App.Ants.animate();
+					App.interval = setInterval(App.Ants.animate, 2000);
+				}else{
+					document.querySelector('body').className = '';
+					clearInterval(App.interval);
 				}
 			}
 		}
