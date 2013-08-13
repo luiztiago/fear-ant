@@ -7,7 +7,7 @@ var App = (function () {
 				e.preventDefault();
 				_self.Ants.generate();
 			});
-			setInterval(_self.Ants.animate, 5000);
+			setInterval(_self.Ants.animate, 2000);
 		},
 		Axis: {
 			generate: function(){
@@ -42,12 +42,14 @@ var App = (function () {
 			},
 			animate: function(){
 
-				var randomX = Math.floor(Math.random() * 100) - 50,
-					randomY = Math.floor(Math.random() * 100) - 50,
+				var randomX,
+					randomY,
 					ants = document.querySelectorAll('.ant'),
 					ant;
 
 				for(i in ants) {
+					randomX = Math.floor(Math.random() * 200) - 100;
+					randomY = Math.floor(Math.random() * 200) - 100;
 					ant = ants[i];
 					ant.style.left = ant.offsetLeft + randomX + "px";
 					ant.style.top = ant.offsetTop + randomY + "px";
