@@ -12,9 +12,8 @@ var App = (function () {
 			// event handler event type
 			window.addEventListener('devicelight', function(event) {
 				_self.Light.handler(event.value);
-			})
+			});
 
-			_self.Ants.generate(1);
 		},
 		Ants: {
 			generate: function(length){
@@ -28,16 +27,16 @@ var App = (function () {
 
 				for(var i=0; i<length; i++) {
 					randomScale = Math.floor(Math.random() * 5) / 10 + 0.3;
-					randomX = Math.floor(Math.random() * 90);
-					randomY = Math.floor(Math.random() * 90);
+					randomX = Math.floor(Math.random() * window.innerWidth)
+					randomY = Math.floor(Math.random() * window.innerHeight)
 					randomRotate = Math.floor(Math.random() * 360);
 
 					newAnt = t.content.querySelector('.ant');
 
 					newAnt.style.top = '10px';
 					newAnt.style.MozTransform = 'scale('+randomScale+','+randomScale+') rotate('+randomRotate+'deg)';
-					newAnt.style.left = randomX + "%";
-					newAnt.style.top = randomY + "%";
+					newAnt.style.left = randomX + "px";
+					newAnt.style.top = randomY + "px";
 
 					document.body.appendChild(t.content.cloneNode(true));
 				}
@@ -56,14 +55,15 @@ var App = (function () {
 					randomX = Math.floor(Math.random() * window.innerWidth);
 					randomY = Math.floor(Math.random() * window.innerHeight);
 
-					deltaY = randomY - ant.style.top.replace('px','');
-					deltaX = randomX - ant.style.left.replace('px','');
-					angleInDegrees = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
-					angleInDegrees = angleInDegrees - 180;
-					ant.style.webkitTransform = 'rotate('+angleInDegrees+'deg)';
-
-					ant.style.left = randomX + "px";
-					ant.style.top = randomY + "px";
+					if(ant.style){
+						deltaY = randomY - ant.style.top.replace('px','');
+						deltaX = randomX - ant.style.left.replace('px','');
+						angleInDegrees = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
+						angleInDegrees = angleInDegrees - 180;
+						ant.style.MozTransform = 'rotate('+angleInDegrees+'deg)';
+						ant.style.left = randomX + "px";
+						ant.style.top = randomY + "px";
+					}
 				}
 			}
 		},
