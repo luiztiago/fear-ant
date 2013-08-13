@@ -20,7 +20,7 @@ div {
 	position: absolute;
 	background-color: transparent;
 	-webkit-transform-origin: center center;
-	transition: all 2s linear;
+	transition: all 0.2s linear, top 2s linear, left 2s linear;
 }
 
 .aerial {
