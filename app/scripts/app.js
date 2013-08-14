@@ -42,40 +42,46 @@ var App = (function () {
 				}
 			},
 			animate: function(){
-				var randomX,
-					randomY,
-					deltaX,
-					deltaY,
-					ants = document.querySelectorAll('.ant'),
-					ant;
+				var now = Date.now();
+				if((now - 2000) > App.Light.lastTime){
+					var randomX,
+						randomY,
+						deltaX,
+						deltaY,
+						ants = document.querySelectorAll('.ant'),
+						ant;
 
-				for(i in ants) {
-					ant = ants[i];
+					for(i in ants) {
+						ant = ants[i];
 
-					randomX = Math.floor(Math.random() * window.innerWidth);
-					randomY = Math.floor(Math.random() * window.innerHeight);
+						randomX = Math.floor(Math.random() * window.innerWidth);
+						randomY = Math.floor(Math.random() * window.innerHeight);
 
-					if(ant.style){
-						deltaY = randomY - ant.style.top.replace('px','');
-						deltaX = randomX - ant.style.left.replace('px','');
-						angleInDegrees = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
-						angleInDegrees = angleInDegrees - 180;
-						ant.style.MozTransform = 'rotate('+angleInDegrees+'deg)';
-						ant.style.left = randomX + "px";
-						ant.style.top = randomY + "px";
+						if(ant.style){
+							deltaY = randomY - ant.style.top.replace('px','');
+							deltaX = randomX - ant.style.left.replace('px','');
+							angleInDegrees = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
+							angleInDegrees = angleInDegrees - 180;
+							ant.style.MozTransform = 'rotate('+angleInDegrees+'deg)';
+							ant.style.left = randomX + "px";
+							ant.style.top = randomY + "px";
+						}
 					}
+					App.Light.lastTime = now;
 				}
+				App.Light.id = requestAnimationFrame(App.Ants.animate);
 			}
 		},
 		Light: {
+			id: null,
+			lastTime: Date.now(),
 			handler: function(value){
 				if(value < 10) {
 					document.querySelector('body').className = 'night';
-					App.Ants.animate();
-					App.interval = setInterval(App.Ants.animate, 2000);
-				}else{
+					App.Light.id = requestAnimationFrame(App.Ants.animate);
+				} else {
 					document.querySelector('body').className = '';
-					clearInterval(App.interval);
+					cancelAnimationFrame(App.Light.id);
 				}
 			}
 		}
