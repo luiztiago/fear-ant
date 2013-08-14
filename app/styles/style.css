@@ -130,7 +130,7 @@ body.night .ant div {
 }
 
 .night .paw .left {
-	animation: paw-left linear 0.8s infinite;
+	animation: paw-left linear 0.5s infinite;
 }
 
 .paw .left .arm {
@@ -142,7 +142,7 @@ body.night .ant div {
 }
 
 .night .paw .left .arm {
-	animation: paw-left-arm linear 0.8s infinite;
+	animation: paw-left-arm linear 0.5s infinite;
 }
 
 .paw .right {
@@ -156,7 +156,7 @@ body.night .ant div {
 }
 
 .night .paw .right {
-	animation: paw-right linear 0.8s infinite;
+	animation: paw-right linear 0.5s infinite;
 }
 
 .paw .right .arm {
@@ -168,7 +168,7 @@ body.night .ant div {
 }
 
 .night .paw .right .arm {
-	animation: paw-right-arm linear 0.8s infinite;
+	animation: paw-right-arm linear 0.5s infinite;
 }
 
 .paw1 .left {
@@ -176,7 +176,7 @@ body.night .ant div {
 }
 
 .night .paw1 .left {
-	animation: paw1-left linear 0.8s infinite;
+	animation: paw1-left linear 0.5s infinite;
 }
 
 .paw1 .left .arm {
@@ -187,7 +187,7 @@ body.night .ant div {
 }
 
 .night .paw1 .left .arm {
-	animation: paw1-left-arm linear 0.8s infinite;
+	animation: paw1-left-arm linear 0.5s infinite;
 }
 
 .paw1 .right {
@@ -195,7 +195,7 @@ body.night .ant div {
 }
 
 .night .paw1 .right {
-	animation: paw1-right linear 0.8s infinite;
+	animation: paw1-right linear 0.5s infinite;
 }
 
 .paw1 .right .arm {
@@ -206,7 +206,7 @@ body.night .ant div {
 }
 
 .night .paw1 .right .arm {
-	animation: paw1-right-arm linear 0.8s infinite;
+	animation: paw1-right-arm linear 0.5s infinite;
 }
 
 .paw2 .left {
@@ -218,7 +218,7 @@ body.night .ant div {
 }
 
 .night .paw2 .left {
-	animation: paw2-left linear 0.8s infinite;
+	animation: paw2-left linear 0.5s infinite;
 }
 
 .paw2 .left .arm {
@@ -229,7 +229,7 @@ body.night .ant div {
 }
 
 .night .paw2 .left .arm {
-	animation: paw2-left-arm linear 0.8s infinite;
+	animation: paw2-left-arm linear 0.5s infinite;
 }
 
 .paw2 .right {
@@ -242,7 +242,7 @@ body.night .ant div {
 }
 
 .night .paw2 .right {
-	animation: paw2-right linear 0.8s infinite;
+	animation: paw2-right linear 0.5s infinite;
 }
 
 .paw2 .right .arm {
@@ -253,7 +253,7 @@ body.night .ant div {
 }
 
 .night .paw2 .right .arm {
-	animation: paw2-right-arm linear 0.8s infinite;
+	animation: paw2-right-arm linear 0.5s infinite;
 }
 
 /*======================
