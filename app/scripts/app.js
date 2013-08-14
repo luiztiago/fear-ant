@@ -34,6 +34,7 @@ var App = (function () {
 					newAnt = t.content.querySelector('.ant');
 
 					newAnt.style.top = '10px';
+					newAnt.setAttribute('data-scale',randomScale);
 					newAnt.style.MozTransform = 'scale('+randomScale+','+randomScale+') rotate('+randomRotate+'deg)';
 					newAnt.style.left = randomX + "px";
 					newAnt.style.top = randomY + "px";
@@ -44,11 +45,12 @@ var App = (function () {
 			animate: function(){
 				var now = Date.now();
 				if((now - 2000) > App.Light.lastTime){
-					var randomX,
+					var ants = document.querySelectorAll('.ant'),
+						randomX,
 						randomY,
 						deltaX,
 						deltaY,
-						ants = document.querySelectorAll('.ant'),
+						scale,
 						ant;
 
 					for(i in ants) {
@@ -62,7 +64,8 @@ var App = (function () {
 							deltaX = randomX - ant.style.left.replace('px','');
 							angleInDegrees = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
 							angleInDegrees = angleInDegrees - 180;
-							ant.style.MozTransform = 'rotate('+angleInDegrees+'deg)';
+							scale = ant.getAttribute('data-scale');
+							ant.style.MozTransform = 'scale('+scale+','+scale+') rotate('+angleInDegrees+'deg)';
 							ant.style.left = randomX + "px";
 							ant.style.top = randomY + "px";
 						}
